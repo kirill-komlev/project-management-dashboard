@@ -17,9 +17,10 @@ export function Button({ variant = 'default', size = 'medium', disabled = false,
 		<button
 			disabled={disabled}
 			className={cn(
-				// 'inline-flex items-center justify-center gap-2',
+				'inline-flex items-center justify-center gap-2',
 				'cursor-pointer',
 				'transition-all duration-200',
+				'align-middle',
 				buttonVariants.variant[variant],
 				buttonVariants.size[size],
 				disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
