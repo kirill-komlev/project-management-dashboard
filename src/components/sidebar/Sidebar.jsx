@@ -4,10 +4,11 @@ import { SidebarListLink } from './SidebarListLink'
 import { SidebarListTitle } from './SidebarListTitle'
 import { SidebarList } from './SidebarList'
 import { SidebarListAction } from './SidebarListAction'
+import { PAGE_CONFIG } from '../../configs/page-config'
 
 const mainMenuList = [
 	{
-		to: '/inbox',
+		to: PAGE_CONFIG.inbox,
 		icon: (
 			<LayoutGrid
 				size={20}
@@ -17,7 +18,7 @@ const mainMenuList = [
 		text: 'Inbox',
 	},
 	{
-		to: '/comments',
+		to: PAGE_CONFIG.comments,
 		icon: (
 			<MessageSquareMore
 				size={20}
@@ -27,7 +28,7 @@ const mainMenuList = [
 		text: 'Assigned Comments',
 	},
 	{
-		to: '/tasks',
+		to: PAGE_CONFIG.tasks,
 		icon: (
 			<ClipboardList
 				size={20}
@@ -37,7 +38,7 @@ const mainMenuList = [
 		text: 'My Tasks',
 	},
 	{
-		to: '/settings',
+		to: PAGE_CONFIG.teamSettings,
 		icon: (
 			<Settings
 				size={20}
@@ -50,7 +51,7 @@ const mainMenuList = [
 
 const workSpacesList = [
 	{
-		to: '/more',
+		to: `${PAGE_CONFIG.workSpace}/W23954736`,
 		icon: (
 			<Pencil
 				className='p-0.5 bg-blue-500 rounded'
@@ -62,7 +63,7 @@ const workSpacesList = [
 		text: 'Design Team',
 	},
 	{
-		to: '/more',
+		to: `${PAGE_CONFIG.workSpace}/W89023456`,
 		icon: (
 			<CodeXml
 				className='p-0.5 bg-green-500 rounded'
@@ -74,7 +75,7 @@ const workSpacesList = [
 		text: 'Development Deck',
 	},
 	{
-		to: '/more',
+		to: `${PAGE_CONFIG.workSpace}/W12353467`,
 		icon: (
 			<CircleDashed
 				className='p-0.5 bg-purple-500 rounded'
@@ -89,7 +90,7 @@ const workSpacesList = [
 
 const channelsList = [
 	{
-		to: 'welcome',
+		to: `${PAGE_CONFIG.channel}/C12353467`,
 		icon: (
 			<Hash
 				size={20}
@@ -99,7 +100,7 @@ const channelsList = [
 		text: 'Welcome',
 	},
 	{
-		to: 'general',
+		to: `${PAGE_CONFIG.channel}/C23353467`,
 		icon: (
 			<Hash
 				size={20}
@@ -113,7 +114,7 @@ const channelsList = [
 
 const messagesList = [
 	{
-		to: '/12345678',
+		to: `${PAGE_CONFIG.directMessage}/DM1235346`,
 		icon: (
 			<UserRound
 				className='p-0.5 bg-taupe-500 rounded-2xl'
@@ -125,7 +126,7 @@ const messagesList = [
 		text: 'eren-jaeger@gmail.com',
 	},
 	{
-		to: '/12345678',
+		to: `${PAGE_CONFIG.directMessage}/DM2335346`,
 		icon: (
 			<UserRound
 				className='p-0.5 bg-red-500 rounded-2xl'
@@ -137,7 +138,7 @@ const messagesList = [
 		text: `mikasa-ackerman@gmail.com`,
 	},
 	{
-		to: '/12345678',
+		to: `${PAGE_CONFIG.directMessage}/DM3435346`,
 		icon: (
 			<UserRound
 				className='p-0.5 bg-yellow-500 rounded-2xl'

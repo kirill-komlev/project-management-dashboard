@@ -7,7 +7,7 @@ export function SidebarListLink({ to, icon, comment, children }) {
 	return (
 		<NavLink
 			to={to}
-			className={({ isActive }) => (isActive ? cn(baseStyles, 'bg-gray-200 text-black') : baseStyles)}
+			className={({ isActive }) => (isActive ? cn(baseStyles, 'bg-gray-200 text-black hover:bg-gray-200') : baseStyles)}
 		>
 			{icon}
 			<p className='truncate max-w-full flex-1 min-w-0'>
