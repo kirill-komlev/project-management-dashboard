@@ -1,4 +1,4 @@
-import { cn } from '../../libs/cn/cn'
+import { cn } from 'libs/cn/cn'
 
 const buttonVariants = {
 	variant: {
@@ -7,8 +7,8 @@ const buttonVariants = {
 	},
 	size: {
 		small: 'px-2 py-1 text-sm rounded',
-		medium: 'px-3 py-1.5 text-base rounded-2xl',
-		large: 'px-4 py-2 text-lg rounded-2xl',
+		medium: 'px-3 py-1.5 text-base rounded-full',
+		large: 'px-4 py-2 text-lg rounded-full',
 	},
 }
 
