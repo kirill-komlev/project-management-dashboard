@@ -1,4 +1,4 @@
-import { cn } from 'shared/libs/cn/cn'
+import { cn } from 'shared/libs/cn'
 
 const buttonVariants = {
 	variant: {
@@ -6,13 +6,13 @@ const buttonVariants = {
 		primary: 'bg-blue-500 text-white hover:bg-blue-600',
 	},
 	size: {
-		small: 'px-1 py-1 text-sm rounded',
-		medium: 'px-1.5 py-1.5 text-base rounded-full',
-		large: 'px-2 py-2 text-lg rounded-2xl',
+		small: 'px-2 py-1 text-sm rounded',
+		medium: 'px-3 py-1.5 text-base rounded-full',
+		large: 'px-4 py-2 text-lg rounded-full',
 	},
 }
 
-export function CircleButton({ variant = 'default', size = 'medium', disabled = false, className = '', children, ...props }) {
+export function Button({ variant = 'default', size = 'medium', disabled = false, className = '', children, ...props }) {
 	return (
 		<button
 			disabled={disabled}

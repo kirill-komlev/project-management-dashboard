@@ -5,10 +5,8 @@ import { ChevronDown, ChevronUp, Ellipsis, Flag, UserRound, EyeOff } from 'lucid
 import { USERS_CONFIG } from 'shared/configs/users-config'
 import { TAGS_CONFIG } from 'shared/configs/tags-config'
 
-import { cn } from 'shared/libs/cn/cn'
-
-import { Chip } from './Chip'
-import { Tags } from './Tags'
+import { cn } from 'shared/libs/cn'
+import { Chip, Tags } from '..'
 
 const headers = ['Project', 'Assignee', 'Due Date', 'Priority']
 

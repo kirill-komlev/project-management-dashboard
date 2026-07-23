@@ -1,19 +1,15 @@
 import { CalendarDays, CircleAlert, Clock, Ellipsis, LayoutDashboard, ListChecks, Plus, Settings, SquareActivity, Users } from 'lucide-react'
 
+import { useTabStore } from 'features/task-tabs/model/tabStore'
+
 import { inDesignData, inDevelopmentData, reviewData, shippedData } from 'shared/configs/data-config'
-
 import { useTitle } from 'shared/hooks/useTitle'
-
-import { Button } from 'shared/ui/Button'
-import { CircleButton } from 'shared/ui/CircleButton'
-import { Container } from 'shared/ui/Container'
-import { Table } from 'shared/ui/Table'
-import { Tabs } from 'shared/ui/Tabs'
+import { Button, CircleButton, Container, Table, Tab, TabList } from 'shared/ui'
 
 const tabs = [
 	{
-		index: 0,
-		name: 'List view',
+		value: 0,
+		label: 'List view',
 		icon: (
 			<ListChecks
 				size={20}
@@ -22,8 +18,8 @@ const tabs = [
 		),
 	},
 	{
-		index: 1,
-		name: 'Board view',
+		value: 1,
+		label: 'Board view',
 		icon: (
 			<LayoutDashboard
 				size={20}
@@ -32,8 +28,8 @@ const tabs = [
 		),
 	},
 	{
-		index: 2,
-		name: 'Calendar view',
+		value: 2,
+		label: 'Calendar view',
 		icon: (
 			<CalendarDays
 				size={20}
@@ -42,8 +38,8 @@ const tabs = [
 		),
 	},
 	{
-		index: 3,
-		name: 'Timeline view',
+		value: 3,
+		label: 'Timeline view',
 		icon: (
 			<Clock
 				size={20}
@@ -55,6 +51,7 @@ const tabs = [
 
 export function TasksPage() {
 	useTitle('Tasks')
+	const { activeTab, setActiveTab } = useTabStore()
 
 	return (
 		<>
@@ -96,7 +93,19 @@ export function TasksPage() {
 						</div>
 					</div>
 					<div className='mt-2 flex items-center justify-between'>
-						<Tabs tabs={tabs} />
+						<TabList>
+							{tabs.map(tab => (
+								<Tab
+									key={tab.value}
+									value={tab.value}
+									label={tab.label}
+									icon={tab.icon}
+									active={activeTab === tab.value}
+									onClick={setActiveTab}
+								/>
+							))}
+						</TabList>
+
 						<div className='inline-flex gap-2 items-center justify-between'>
 							<Button size='large'>
 								<Settings strokeWidth={1.5} />
@@ -114,24 +123,29 @@ export function TasksPage() {
 				</Container>
 			</div>
 			<div>
-				<Container className='my-6 p-2 flex flex-col gap-2 bg-gray-50 rounded-2xl'>
-					<Table
-						data={shippedData}
-						status='shipped'
-					/>
-					<Table
-						data={reviewData}
-						status='review'
-					/>
-					<Table
-						data={inDevelopmentData}
-						status='inDevelopment'
-					/>
-					<Table
-						data={inDesignData}
-						status='inDesign'
-					/>
-				</Container>
+				{activeTab === 0 && (
+					<Container className='my-6 p-2 flex flex-col gap-2 bg-gray-50 rounded-2xl'>
+						<Table
+							data={shippedData}
+							status='shipped'
+						/>
+						<Table
+							data={reviewData}
+							status='review'
+						/>
+						<Table
+							data={inDevelopmentData}
+							status='inDevelopment'
+						/>
+						<Table
+							data={inDesignData}
+							status='inDesign'
+						/>
+					</Container>
+				)}
+				{activeTab === 1 && <Container>Board view content</Container>}
+				{activeTab === 2 && <Container>Calendar view content</Container>}
+				{activeTab === 3 && <Container>Timeline view content</Container>}
 			</div>
 		</>
 	)

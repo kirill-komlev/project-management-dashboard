@@ -1,4 +1,4 @@
-import { cn } from 'shared/libs/cn/cn'
+import { cn } from 'shared/libs/cn'
 
 const icons = {
 	inDesign: `

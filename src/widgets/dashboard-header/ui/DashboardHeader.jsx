@@ -1,4 +1,4 @@
-import { Container } from 'shared/ui/Container'
+import { Container } from 'shared/ui/container/Container'
 
 import { DashboardHeaderNotifyButton } from './DashboardHeaderNotifyButton'
 import { DashboardHeaderProfileButton } from './DashboardHeaderProfileButton'
